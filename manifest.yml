@@ -1,0 +1,10 @@
+---
+applications:
+- name: GetStartedGo
+  random-route: true
+  memory: 128M
+  instances: 2
+  env:
+    GOPACKAGENAME: get-started-go
+    GOVERSION: 1.11
+  command: get-started-go -config config.pb -format pb
