@@ -20,7 +20,6 @@ COPY setup-v2ray.sh /usr/bin/v2ray/
 
 RUN set -ex && \
     apk --no-cache add ca-certificates && \
-    apk add --update jq && \
     mkdir /var/log/v2ray/ &&\
     chmod +x /usr/bin/v2ray/v2ctl && \
     chmod +x /usr/bin/v2ray/v2ray && \
@@ -28,7 +27,7 @@ RUN set -ex && \
 
 ENV PATH /usr/bin/v2ray:$PATH
 
-CMD /usr/bin/v2ray/setup-v2ray.sh && \
-    v2ray -config=/etc/v2ray/config.json
+CMD v2ray -config=/etc/v2ray/config.json
+    
 
 EXPOSE 8080
